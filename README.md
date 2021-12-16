@@ -16,12 +16,12 @@
 
 > 파일 설명
 
-+ data_collection
++ 📁 data_collection
   + KRX_fullcode.ipynb : @@@
   + datacollection_1.ipynb : @@@
   + datacollection_2.ipynb : @@@
  
-+ data_preprocessing
++ 📁 data_preprocessing
   + K_project_hyunku.ipynb : @@@
   + TimeSeries_trend.ipynb : @@@
   + optimization.ipynb : @@@
