@@ -22,6 +22,5 @@
   + datacollection_2.ipynb : @@@
  
 + 📁 data_preprocessing
-  + K_project_hyunku.ipynb : @@@
   + TimeSeries_trend.ipynb : @@@
   + optimization.ipynb : @@@
