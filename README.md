@@ -18,9 +18,9 @@
 
 + 📁 data_collection
   + KRX_fullcode.ipynb : @@@
-  + datacollection_1.ipynb : @@@
-  + datacollection_2.ipynb : @@@
+  + datacollection_1.ipynb : KRX의 주식 전종목 날짜별 데이터 수집 (초기에 1번 실행, 약 6시간 소요)
+  + datacollection_2.ipynb : KRX의 주식 전종목 날짜별 데이터 매일 업데이트 (하루에 1번 실행, 약 1시간 20분 소요)
  
 + 📁 data_preprocessing
   + TimeSeries_trend.ipynb : @@@
-  + optimization.ipynb : @@@
+  + optimization.ipynb : 보조지표 파라미터 최적화 및 sell/buy signal 도출
