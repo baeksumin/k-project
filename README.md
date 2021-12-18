@@ -17,7 +17,7 @@
 > 파일 설명
 
 + 📁 data_collection
-  + KRX_fullcode.ipynb : KRX 상장된 주식 전종목 fullcode 수집 및 매일 종목 상태(상장폐지, 신규상장, 이전상장 등) 업데이트
+  + KRX_fullcode.ipynb : KRX 상장된 주식 전종목 fullcode 수집 및 매일 종목 상태 (상장폐지, 신규상장) 업데이트
   + datacollection_1.ipynb : KRX의 주식 전종목 날짜별 데이터 수집 (초기에 1번 실행, 약 6시간 소요)
   + datacollection_2.ipynb : KRX의 주식 전종목 날짜별 데이터 매일 업데이트 (하루에 1번 실행, 약 1시간 20분 소요)
  
