@@ -25,3 +25,7 @@
 + 📁 data_preprocessing
   + TimeSeries_trend.ipynb : 시가총액 trend로 변환
   + optimization.ipynb : 보조지표 파라미터 최적화 및 sell/buy signal 도출
+
++ 📁 modeling
+  + modeling.ipynb : @@
+ 
