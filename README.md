@@ -27,5 +27,8 @@
   + optimization.ipynb : 보조지표 파라미터 최적화 및 sell/buy signal 도출
 
 + 📁 modeling
-  + modeling.ipynb : @@
+  + lstm_seq_optim.ipynb : lstm 모델 최적화
+  + model_backtest.ipynb : 예측값을 통해 backtest 실행하여 수익률 도출
+  + modeling.ipynb : lstm 사용하여 학습 및 예측
+  + modeling_gru.ipynb : gru 사용하여 학습 및 예측
  
