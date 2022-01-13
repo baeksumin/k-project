@@ -31,16 +31,16 @@
 + 📁 data_collection
   + KRX_fullcode_1.ipynb : KRX 상장된 주식 전종목 fullcode 수집 (초기 1회 실행)
   + KRX_fullcode_2.ipynb : KRX 주식 전종목 상태 (상장폐지, 신규상장 등) 매일 업데이트
-  + datacollection_1.ipynb : KRX의 주식 전종목 날짜별 데이터 수집 (초기에 1번 실행, 약 6시간 소요)
+  + datacollection_1.ipynb : KRX의 주식 전종목 날짜별 데이터 수집 (초기에 1회 실행, 약 6시간 소요)
   + datacollection_2.ipynb : KRX의 주식 전종목 날짜별 데이터 매일 업데이트 (하루에 1번 실행, 약 1시간 20분 소요)
  
 + 📁 data_preprocessing
-  + AWS_sagemaker.ipynb : 클라우드 컴퓨팅을 이용한 대용량 주가데이터 병렬처리 
+  + AWS_preprocessing.ipynb : 클라우드 컴퓨팅을 이용한 대용량 주가데이터 병렬처리 
   + TimeSeries_trend.ipynb : 시가총액 trend로 변환
   + optimization.ipynb : 보조지표 파라미터 최적화 및 sell/buy signal 도출
 
 + 📁 modeling
-  + lstm_seq_optim.ipynb : lstm 모델 최적화
+  + lstm_seq_optim.ipynb : LSTM 모델 최적화
   + model_backtest.ipynb : 예측값을 통해 backtest 실행하여 수익률 도출
-  + modeling.ipynb : lstm 사용하여 학습 및 예측
-  + modeling_gru.ipynb : gru 사용하여 학습 및 예측
+  + modeling.ipynb : LSTM 사용하여 학습 및 예측
+  + modeling_gru.ipynb : GRU 사용하여 학습 및 예측
