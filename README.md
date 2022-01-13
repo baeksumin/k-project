@@ -21,7 +21,8 @@
 
 > 실행환경
 
-@@
+GOOGLE COLAB<br>
+PYTHON 3.8
 
 ---
 
