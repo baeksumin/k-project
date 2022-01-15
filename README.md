@@ -49,5 +49,5 @@ PYTHON 3.8
 + 📁 modeling
   + final.ipynb : CNN, GRU 모델 구축, 파라미터 최적화 및 backtest 수익률 구현
   + modeling.ipynb : LSTM 사용하여 학습 및 예측
-  + modeling_ML.ipynb : elastic, forest, xgb 사용하여 학습 및 예측
+  + modeling_ML.ipynb : ElasticNet, RandomForest, XGBoost 사용하여 학습 및 예측
   + modeling_gru.ipynb : GRU 사용하여 학습 및 예측
