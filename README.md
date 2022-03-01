@@ -42,7 +42,8 @@ PYTHON 3.8
   + datacollection_2.ipynb : KRX의 주식 전종목 날짜별 데이터 매일 업데이트 (하루에 1번 실행, 약 1시간 20분 소요)
  
 + 📁 data_preprocessing
-  + AWS_preprocessing.ipynb : 클라우드 컴퓨팅을 이용한 대용량 주가데이터 병렬처리 
+  + AWS_preprocessing.ipynb : 클라우드 컴퓨팅을 이용한 대용량 주가데이터 병렬처리
+  + preprocessing.py : AWS Scikit-Learn 전처리 스크립트
   + TimeSeries_trend.ipynb : 시가총액 trend [-1,1]값으로 변환
   + optimization.ipynb : 보조지표 파라미터 최적화 및 sell/buy signal 도출
 
