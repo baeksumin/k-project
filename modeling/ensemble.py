@@ -134,54 +134,6 @@ if __name__ == "__main__":
     
     print("각 인스턴스 처리하는 파일 개수 : ", len(files))    
     
-    #final_df_el = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'max_iter', 'random_state', 'l1_ratio', 'alpha', 'MDD', 'CAGR', 'profit'])
-    final_df_el = pd.DataFrame()
-    final_df_el['full_code'] = np.nan
-    final_df_el['train'] = np.nan
-    final_df_el['test'] = np.nan
-    final_df_el['max_iter'] = np.nan
-    final_df_el['random_state'] = np.nan
-    final_df_el['l1_ratio'] = np.nan
-    final_df_el['alpha'] = np.nan
-    final_df_el['MDD'] = np.nan
-    final_df_el['CAGR'] = np.nan   
-    final_df_el['profit'] = np.nan   
-    
-    #final_df_rf = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'min_samples_split', 'random_state', 'n_estimators', 'max_depth', 'MDD', 'CAGR', 'profit'])
-    final_df_rf = pd.DataFrame()
-    final_df_rf['full_code'] = np.nan
-    final_df_rf['train'] = np.nan
-    final_df_rf['test'] = np.nan    
-    final_df_rf['min_samples_split'] = np.nan
-    final_df_rf['random_state'] = np.nan
-    final_df_rf['n_estimators'] = np.nan
-    final_df_rf['max_depth'] = np.nan
-    final_df_rf['MDD'] = np.nan
-    final_df_rf['CAGR'] = np.nan    
-    final_df_rf['profit'] = np.nan        
-    
-    #final_df_xgb = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'reg_alpha', 'random_state', 'n_estimators', 'max_depth', 'MDD', 'CAGR', 'profit'])
-    final_df_xgb = pd.DataFrame()
-    final_df_xgb['full_code'] = np.nan
-    final_df_xgb['train'] = np.nan  
-    final_df_xgb['test'] = np.nan 
-    final_df_xgb['reg_alpha'] = np.nan     
-    final_df_xgb['random_state'] = np.nan     
-    final_df_xgb['n_estimators'] = np.nan     
-    final_df_xgb['max_depth'] = np.nan     
-    final_df_xgb['MDD'] = np.nan     
-    final_df_xgb['CAGR'] = np.nan     
-    final_df_xgb['profit'] = np.nan       
-    
-    #final_df = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'MDD', 'CAGR', 'profit'])
-    final_df = pd.DataFrame()    
-    final_df['full_code'] = np.nan   
-    final_df['train'] = np.nan       
-    final_df['test'] = np.nan       
-    final_df['MDD'] = np.nan       
-    final_df['CAGR'] = np.nan       
-    final_df['profit'] = np.nan       
-    
     
     for k, f in enumerate(files):
 
@@ -210,7 +162,57 @@ if __name__ == "__main__":
         X_colname = [x for x in mktcap_data.columns if x not in Y_colname + X_remove] #입력변수들
 
         X_train, X_test, Y_train, Y_test = datasplit(mktcap_data, Y_colname, X_colname)
+        
+        
+        #final_df_el = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'max_iter', 'random_state', 'l1_ratio', 'alpha', 'MDD', 'CAGR', 'profit'])
+        final_df_el = pd.DataFrame()
+        final_df_el['full_code'] = np.nan
+        final_df_el['train'] = np.nan
+        final_df_el['test'] = np.nan
+        final_df_el['max_iter'] = np.nan
+        final_df_el['random_state'] = np.nan
+        final_df_el['l1_ratio'] = np.nan
+        final_df_el['alpha'] = np.nan
+        final_df_el['MDD'] = np.nan
+        final_df_el['CAGR'] = np.nan   
+        final_df_el['profit'] = np.nan   
 
+        #final_df_rf = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'min_samples_split', 'random_state', 'n_estimators', 'max_depth', 'MDD', 'CAGR', 'profit'])
+        final_df_rf = pd.DataFrame()
+        final_df_rf['full_code'] = np.nan
+        final_df_rf['train'] = np.nan
+        final_df_rf['test'] = np.nan    
+        final_df_rf['min_samples_split'] = np.nan
+        final_df_rf['random_state'] = np.nan
+        final_df_rf['n_estimators'] = np.nan
+        final_df_rf['max_depth'] = np.nan
+        final_df_rf['MDD'] = np.nan
+        final_df_rf['CAGR'] = np.nan    
+        final_df_rf['profit'] = np.nan        
+
+        #final_df_xgb = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'reg_alpha', 'random_state', 'n_estimators', 'max_depth', 'MDD', 'CAGR', 'profit'])
+        final_df_xgb = pd.DataFrame()
+        final_df_xgb['full_code'] = np.nan
+        final_df_xgb['train'] = np.nan  
+        final_df_xgb['test'] = np.nan 
+        final_df_xgb['reg_alpha'] = np.nan     
+        final_df_xgb['random_state'] = np.nan     
+        final_df_xgb['n_estimators'] = np.nan     
+        final_df_xgb['max_depth'] = np.nan     
+        final_df_xgb['MDD'] = np.nan     
+        final_df_xgb['CAGR'] = np.nan     
+        final_df_xgb['profit'] = np.nan       
+
+        #final_df = pd.DataFrame([], columns = ['full_code', 'train', 'test', 'MDD', 'CAGR', 'profit'])
+        final_df = pd.DataFrame()    
+        final_df['full_code'] = np.nan   
+        final_df['train'] = np.nan       
+        final_df['test'] = np.nan       
+        final_df['MDD'] = np.nan       
+        final_df['CAGR'] = np.nan       
+        final_df['profit'] = np.nan       
+        
+        
         #optimum_df = pd.DataFrame([], columns = ['train', 'test', 'max_iter', 'random_state', 'l1_ratio', 'alpha', 'MDD', 'CAGR', 'profit'])
         #optimum_df = pd.DataFrame([], columns = ['train', 'test', 'MDD', 'CAGR', 'profit'])
         optimum_df = pd.DataFrame()
@@ -900,11 +902,11 @@ if __name__ == "__main__":
 
         op_list = optimum_df.iloc[0].tolist()
         op_list.insert(0, code[:-4])
-        print(op_list)
+        #print(op_list)
 
         final_df = final_df.append(pd.Series(op_list, index=final_df.columns), ignore_index=True)
 
-        print(final_df)
+        #print(final_df)
         
         
         model = final_df_el.copy()       
@@ -942,7 +944,20 @@ if __name__ == "__main__":
         pd.DataFrame(final_df).to_csv(output_path_ensemble, index=False)
         print('Saving train data {}'.format(output_path_ensemble))        
         
+    #print("--------------------------------------")      
+    #f = 's3://sagemaker-hhkim/train/ElasticNet.csv'
+    #df = f.format('ap-northeast-2')
+    #df = pd.read_csv(df)
+    
+    #print(df)
+    #append_df = df.append(final_df_el)
+    
+    #print(append_df)
+    #output_path = os.path.join('/opt/ml/processing/train_data' , 'ElasticNet.csv')
 
+    #pd.DataFrame(append_df).to_csv(output_path, index=False)
+    #print('Saving train data {}'.format(output_path))
+       
 
 
 
