@@ -123,6 +123,15 @@ def datasplit(df, Y_colname, X_colname): #데이터 분리 함수
   return X_train, X_test, Y_train, Y_test
 
 
+def backtest_data(data_bt):
+    
+  check_dtype = data_bt.dtype == 'object'
+
+  if (check_dtype):   
+    return data_bt.str.replace(',','').astype('float')
+  else :
+    return data_bt.astype('float') 
+
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -308,11 +317,11 @@ if __name__ == "__main__":
 
                           final = pd.merge(raw, test_score, left_index = True, right_index = True).drop(columns='TRD_DD_y')
                           final = final.rename(columns={'TRD_DD_x': 'TRD_DD'})
-                          final['TDD_OPNPRC'] = final['TDD_OPNPRC'].str.replace(',','').astype('float')
-                          final['TDD_HGPRC'] = final['TDD_HGPRC'].str.replace(',','').astype('float')
-                          final['TDD_LWPRC'] = final['TDD_LWPRC'].str.replace(',','').astype('float')
-                          final['TDD_CLSPRC'] = final['TDD_CLSPRC'].str.replace(',','').astype('float')
-                          final['ACC_TRDVOL'] = final['ACC_TRDVOL'].str.replace(',','').astype('float')
+                          final['TDD_OPNPRC'] = backtest_data(final['TDD_OPNPRC'])
+                          final['TDD_HGPRC'] = backtest_data(final['TDD_HGPRC'])
+                          final['TDD_LWPRC'] = backtest_data(final['TDD_LWPRC'])
+                          final['TDD_CLSPRC'] = backtest_data(final['TDD_CLSPRC'])
+                          final['ACC_TRDVOL'] = backtest_data(final['ACC_TRDVOL'])
                           final = final.astype({'pred':'int'})
 
 
@@ -369,8 +378,15 @@ if __name__ == "__main__":
 
                           # print('init_cash: ', init_cash)
                           # print('final_cash: ', final_cash)
+                            
+                          profit_check = float(final_cash - init_cash)
+                        
+                          if (profit_check != 0):
+                                profit = profit_check / float(init_cash) * 100.
+                          else :
+                            profit = 0
 
-                          profit = float(final_cash - init_cash)/float(init_cash) * 100.
+                          #profit = float(final_cash - init_cash)/float(init_cash) * 100.
                           print("최종금액 : ", final_cash, "원")
                           print("수익률 : ", profit, "%")
                           print("\n")
@@ -483,11 +499,11 @@ if __name__ == "__main__":
 
                           final = pd.merge(raw, test_score, left_index = True, right_index = True).drop(columns='TRD_DD_y')
                           final = final.rename(columns={'TRD_DD_x': 'TRD_DD'})
-                          final['TDD_OPNPRC'] = final['TDD_OPNPRC'].str.replace(',','').astype('float')
-                          final['TDD_HGPRC'] = final['TDD_HGPRC'].str.replace(',','').astype('float')
-                          final['TDD_LWPRC'] = final['TDD_LWPRC'].str.replace(',','').astype('float')
-                          final['TDD_CLSPRC'] = final['TDD_CLSPRC'].str.replace(',','').astype('float')
-                          final['ACC_TRDVOL'] = final['ACC_TRDVOL'].str.replace(',','').astype('float')
+                          final['TDD_OPNPRC'] = backtest_data(final['TDD_OPNPRC'])
+                          final['TDD_HGPRC'] = backtest_data(final['TDD_HGPRC'])
+                          final['TDD_LWPRC'] = backtest_data(final['TDD_LWPRC'])
+                          final['TDD_CLSPRC'] = backtest_data(final['TDD_CLSPRC'])
+                          final['ACC_TRDVOL'] = backtest_data(final['ACC_TRDVOL'])
                           final = final.astype({'pred':'int'})
                           # print(final.isnull().sum())
                           # print('3--------------------------------------------------')
@@ -547,7 +563,15 @@ if __name__ == "__main__":
                           # print('init_cash: ', init_cash)
                           # print('final_cash: ', final_cash)
 
-                          profit = float(final_cash - init_cash)/float(init_cash) * 100.
+                          profit_check = float(final_cash - init_cash)
+                        
+                          if (profit_check != 0):
+                                profit = profit_check / float(init_cash) * 100.
+                          else :
+                            profit = 0                            
+                                            
+                            
+                          #profit = float(final_cash - init_cash)/float(init_cash) * 100.
                           print("최종금액 : ", final_cash, "원")
                           print("수익률 : ", profit, "%")
                           print("\n")
@@ -659,12 +683,16 @@ if __name__ == "__main__":
                           raw['TRD_DD'] = pd.to_datetime(raw['TRD_DD'])
 
                           final = pd.merge(raw, test_score, left_index = True, right_index = True).drop(columns='TRD_DD_y')
+                          
                           final = final.rename(columns={'TRD_DD_x': 'TRD_DD'})
-                          final['TDD_OPNPRC'] = final['TDD_OPNPRC'].str.replace(',','').astype('float')
-                          final['TDD_HGPRC'] = final['TDD_HGPRC'].str.replace(',','').astype('float')
-                          final['TDD_LWPRC'] = final['TDD_LWPRC'].str.replace(',','').astype('float')
-                          final['TDD_CLSPRC'] = final['TDD_CLSPRC'].str.replace(',','').astype('float')
-                          final['ACC_TRDVOL'] = final['ACC_TRDVOL'].str.replace(',','').astype('float')
+                            
+                          
+                          final['TDD_OPNPRC'] = backtest_data(final['TDD_OPNPRC'])
+                          final['TDD_HGPRC'] = backtest_data(final['TDD_HGPRC'])
+                          final['TDD_LWPRC'] = backtest_data(final['TDD_LWPRC'])
+                          final['TDD_CLSPRC'] = backtest_data(final['TDD_CLSPRC'])
+                          final['ACC_TRDVOL'] = backtest_data(final['ACC_TRDVOL'])
+        
                           final = final.astype({'pred':'int'})
                           # print(final.isnull().sum())
                           # print('3--------------------------------------------------')
@@ -724,7 +752,14 @@ if __name__ == "__main__":
                           # print('init_cash: ', init_cash)
                           # print('final_cash: ', final_cash)
 
-                          profit = float(final_cash - init_cash)/float(init_cash) * 100.
+                          profit_check = float(final_cash - init_cash)
+                        
+                          if (profit_check != 0):
+                                profit = profit_check / float(init_cash) * 100.
+                          else :
+                            profit = 0                            
+                                                                                    
+                          #profit = float(final_cash - init_cash)/float(init_cash) * 100.
                           print("최종금액 : ", final_cash, "원")
                           print("수익률 : ", profit, "%")
                           print("\n")
@@ -825,11 +860,12 @@ if __name__ == "__main__":
 
         final = pd.merge(raw, test_score, left_index = True, right_index = True).drop(columns='TRD_DD_y')
         final = final.rename(columns={'TRD_DD_x': 'TRD_DD'})
-        final['TDD_OPNPRC'] = final['TDD_OPNPRC'].str.replace(',','').astype('float')
-        final['TDD_HGPRC'] = final['TDD_HGPRC'].str.replace(',','').astype('float')
-        final['TDD_LWPRC'] = final['TDD_LWPRC'].str.replace(',','').astype('float')
-        final['TDD_CLSPRC'] = final['TDD_CLSPRC'].str.replace(',','').astype('float')
-        final['ACC_TRDVOL'] = final['ACC_TRDVOL'].str.replace(',','').astype('float')
+        
+        final['TDD_OPNPRC'] = backtest_data(final['TDD_OPNPRC'])
+        final['TDD_HGPRC'] = backtest_data(final['TDD_HGPRC'])
+        final['TDD_LWPRC'] = backtest_data(final['TDD_LWPRC'])
+        final['TDD_CLSPRC'] = backtest_data(final['TDD_CLSPRC'])
+        final['ACC_TRDVOL'] = backtest_data(final['ACC_TRDVOL'])
         final = final.astype({'pred':'int'})
 
 
@@ -885,7 +921,16 @@ if __name__ == "__main__":
         print(f"mdd : {mdd:.2f}, cagr: {cagr:.2f}")
 
 
-        profit = float(final_cash - init_cash)/float(init_cash) * 100.
+        #profit = float(final_cash - init_cash)/float(init_cash) * 100.
+        profit_check = float(final_cash - init_cash)
+
+        if (profit_check != 0):
+            profit = profit_check / float(init_cash) * 100.
+        else :
+            profit = 0      
+                
+        
+        
         print("최종금액 : ", final_cash, "원")
         print("수익률 : ", profit, "%")
         print("\n")
