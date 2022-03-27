@@ -101,8 +101,9 @@ class MLSignal(bt.SignalStrategy):
         if not self.position :            
             if self.signal[0] == -1:
                 self.log('BUY CREATE, %.2f' % self.dataclose[0])
+                size = int(self.broker.getcash() / self.dataclose[0])
                 #Keep track of the created order to avoid a 2nd order
-                self.order = self.buy()
+                self.order = self.buy(size = size)
                 
         else:           
             #Already in the market...we might sell                     
@@ -349,10 +350,10 @@ if __name__ == "__main__":
                           cerebro.addstrategy(MLSignal)
 
                           # 브로커 설정
-                          cerebro.broker.setcash(1000000)
+                          cerebro.broker.setcash(10000000)
 
                           # 매매 단위 설정
-                          cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
+                          #cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
 
                           # 3. 세레브로 실행하기
 
@@ -533,10 +534,10 @@ if __name__ == "__main__":
                           cerebro.addstrategy(MLSignal)
 
                           # 브로커 설정
-                          cerebro.broker.setcash(1000000)
+                          cerebro.broker.setcash(10000000)
 
                           # 매매 단위 설정
-                          cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
+                          #cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
 
                           # 3. 세레브로 실행하기
 
@@ -722,10 +723,10 @@ if __name__ == "__main__":
                           cerebro.addstrategy(MLSignal)
 
                           # 브로커 설정
-                          cerebro.broker.setcash(1000000)
+                          cerebro.broker.setcash(10000000)
 
                           # 매매 단위 설정
-                          cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
+                          #cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
 
                           # 3. 세레브로 실행하기
 
@@ -894,10 +895,10 @@ if __name__ == "__main__":
         cerebro.addstrategy(MLSignal)
 
                           # 브로커 설정
-        cerebro.broker.setcash(1000000)
+        cerebro.broker.setcash(10000000)
 
                           # 매매 단위 설정
-        cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
+        #cerebro.addsizer(bt.sizers.SizerFix, stake = 30) #한번에 30주 설정.
 
                           # 3. 세레브로 실행하기
 
